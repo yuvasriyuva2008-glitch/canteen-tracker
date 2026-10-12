@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Canteen - Food Order Tracker</title>
+</head>
+<body>
+
+    <h2>College Canteen - Food Order Tracker</h2>
+
+    <!-- Task 1 Table -->
+    <h3>Task 1: Model Structure</h3>
+    <table border="1">
+        <tr>
+            <td>S. No.</td>
+            <td>Field Name</td>
+            <td>Data Type</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>customer_name</td>
+            <td>CharField</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>food_item</td>
+            <td>CharField</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>quantity</td>
+            <td>IntegerField</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>price</td>
+            <td>IntegerField</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>is_delivered</td>
+            <td>BooleanField</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <!-- Task 2 Table -->
+    <h3>Task 2: Food Orders Data</h3>
+    <table border="1">
+        <tr>
+            <td>S. No.</td>
+            <td>Customer Name</td>
+            <td>Food Item</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Is Delivered</td>
+        </tr>
+        
+        {% for order in orders %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ order.customer_name }}</td>
+            <td>{{ order.food_item }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.price }}</td>
+            <td>{{ order.is_delivered }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
